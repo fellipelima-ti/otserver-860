@@ -35,7 +35,7 @@ cfg() { grep -oP "^$1 = \"\K[^\"]*" "$DIR/config.lua"; }
 DB="$(cfg mysqlDatabase)"; USER="$(cfg mysqlUser)"; PASS="$(cfg mysqlPass)"
 
 TIPO=1; GRUPO=1
-if [ "$ADMIN" = "--admin" ]; then TIPO=5; GRUPO=6; fi
+if [ "$ADMIN" = "--admin" ]; then TIPO=6; GRUPO=6; fi
 
 # Escapa aspas simples para o SQL
 esc() { printf "%s" "$1" | sed -e 's/\\/\\\\/g' -e "s/'/''/g"; }

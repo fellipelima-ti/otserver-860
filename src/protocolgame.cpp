@@ -1353,7 +1353,7 @@ void ProtocolGame::sendSaleItemList(const std::list<ShopInfo>& shop)
 {
 	NetworkMessage msg;
 	msg.addByte(0x7B);
-	msg.add<uint32_t>(player->getMoney());
+	msg.add<uint32_t>(std::min<uint64_t>(player->getShopMoney(), std::numeric_limits<uint32_t>::max()));
 
 	std::map<uint16_t, uint32_t> saleMap;
 

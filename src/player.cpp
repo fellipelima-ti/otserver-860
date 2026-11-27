@@ -1199,6 +1199,8 @@ void Player::openShopWindow(const std::list<ShopInfo>& shop)
 
 bool Player::closeShopWindow(bool sendCloseShopWindow /*= true*/)
 {
+	shopMoney = -1;
+
 	//unreference callbacks
 	int32_t onBuy;
 	int32_t onSell;

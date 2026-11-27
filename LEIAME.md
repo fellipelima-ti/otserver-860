@@ -120,6 +120,35 @@ Level e preço ficam em `data/lib/core/helblazer.lua` (`HELBLAZER_PROMOCOES`).
 
 A 2ª promoção herda **todas** as magias, armas, wands/rods, poções e equipamentos da vocação. Os valores ficam em `data/XML/vocations.xml` (ids 9 a 12).
 
+## Loja de jogador
+
+Qualquer jogador pode montar uma loja na cidade. Um vendedor com a roupa dele, chamado **"Loja de Fulano"**, fica parado vendendo o tempo todo: com o dono online, offline ou caçando. A loja continua no lugar depois de reiniciar o servidor.
+
+**Para vender:**
+
+| Comando | O que faz |
+|---|---|
+| `!loja` | Mostra a ajuda e a situação da sua loja |
+| `!loja abrir` | Coloca o vendedor no piso **à sua frente** (precisa ser protection zone da cidade, fora de casas) |
+| `!loja vender 500` | Põe à venda o item do **slot da flecha** por 500 gold cada (se for um monte, vende o monte inteiro) |
+| `!loja vender 20 coins` | O mesmo, cobrando em coins |
+| `!loja itens` | Lista o que está à venda, com números |
+| `!loja remover 2` | Devolve o item número 2 para a sua mochila |
+| `!loja fechar` | Tira o vendedor do mapa e devolve os itens |
+
+- Gold das vendas vai direto para o **banco** do vendedor; coins vão para a conta.
+- O servidor fica com **10%** de cada venda.
+- Se você estiver online, recebe uma mensagem a cada venda. Se estiver offline, recebe um resumo quando logar.
+- Itens com texto, tempo de uso (anéis ligados), action id ou containers com coisas dentro não podem ser vendidos.
+
+**Para comprar:** chegue perto do vendedor, fale `hi` e depois `trade` (itens em gold) ou `coins` (itens em coins). Abre a janela de trade normal de NPC. O número entre parênteses no nome do item é o estoque. Em gold, dá para pagar com o dinheiro da mochila ou do banco.
+
+**Coins:** são uma moeda do servidor, guardada na conta (vale para todos os personagens dela).
+- `!coins` mostra quantas você tem.
+- O God dá coins com `/coins Nome, 100` (com número negativo, tira).
+
+Taxa, número máximo de itens por loja e preço máximo ficam em `data/lib/core/helblazer_loja.lua` (`HELBLAZER_LOJA`). As tabelas do banco (`player_shops`, `player_shop_items`, `player_shop_sales` e a coluna `coins` de `accounts`) são criadas sozinhas quando o servidor liga.
+
 ## Premium
 
 `freePremium = true` no `config.lua`: todo mundo tem premium (magias premium, promoção etc.). Se um dia você quiser vender premium, mude para `false`.
@@ -135,6 +164,7 @@ A 2ª promoção herda **todas** as magias, armas, wands/rods, poções e equipa
 - **Promoção sumia sem premium:** o login rebaixava a vocação de quem não era premium. Removido.
 - **Armas/magias/equipamentos só passavam uma promoção adiante:** corrigido no código (C++) para valer em toda a cadeia de promoções.
 - **Magias premium inacessíveis** (não há como comprar premium): `freePremium` ativado.
+- **Conta de admin não era God:** o `criar-conta.sh --admin` criava a conta com tipo 5 (community manager). Agora usa o tipo 6 (God).
 
 ## Mapa
 

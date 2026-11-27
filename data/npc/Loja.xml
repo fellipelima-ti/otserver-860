@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Helblazer OT: vendedor das lojas de jogador. Criado pelo comando !loja abrir
+     (nao coloque no mapa nem no spawn). O nome e a roupa vem do dono da loja. -->
+<npc name="Loja" script="loja.lua" walkinterval="0" floorchange="0">
+	<health now="100" max="100" />
+	<look type="128" head="78" body="69" legs="58" feet="76" addons="0" />
+</npc>

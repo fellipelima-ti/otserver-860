@@ -907,6 +907,14 @@ class Player final : public Creature, public Cylinder
 				client->sendShop(shopItemList);
 			}
 		}
+		// Helblazer: saldo mostrado na janela de trade (-1 = dinheiro na mochila)
+		void setShopMoney(int64_t money) {
+			shopMoney = money;
+		}
+		uint64_t getShopMoney() const {
+			return shopMoney >= 0 ? static_cast<uint64_t>(shopMoney) : getMoney();
+		}
+
 		void sendSaleItemList() const {
 			if (client) {
 				client->sendSaleItemList(shopItemList);
@@ -1079,6 +1087,7 @@ class Player final : public Creature, public Cylinder
 		GuildWarVector guildWarVector;
 
 		std::list<ShopInfo> shopItemList;
+		int64_t shopMoney = -1;
 
 		std::forward_list<Party*> invitePartyList;
 		std::forward_list<std::string> learnedInstantSpellList;

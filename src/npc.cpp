@@ -116,8 +116,14 @@ void Npc::reset()
 
 void Npc::reload()
 {
+	const Outfit_t savedOutfit = getCurrentOutfit();
 	reset();
 	load();
+
+	if (!displayName.empty()) {
+		defaultOutfit = savedOutfit;
+		currentOutfit = savedOutfit;
+	}
 
 	SpectatorVec players;
 	g_game.map.getSpectators(players, getPosition(), true, true);

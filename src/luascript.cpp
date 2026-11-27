@@ -2384,6 +2384,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "getMaxSoul", LuaScriptInterface::luaPlayerGetMaxSoul);
 
 	registerMethod("Player", "getBankBalance", LuaScriptInterface::luaPlayerGetBankBalance);
+	registerMethod("Player", "setShopMoney", LuaScriptInterface::luaPlayerSetShopMoney);
 	registerMethod("Player", "setBankBalance", LuaScriptInterface::luaPlayerSetBankBalance);
 
 	registerMethod("Player", "getStorageValue", LuaScriptInterface::luaPlayerGetStorageValue);
@@ -4473,11 +4474,15 @@ int LuaScriptInterface::luaGameCreateMonster(lua_State* L)
 
 int LuaScriptInterface::luaGameCreateNpc(lua_State* L)
 {
-	// Game.createNpc(npcName, position[, extended = false[, force = false]])
+	// Game.createNpc(npcName, position[, extended = false[, force = false[, displayName = ""]]])
 	Npc* npc = Npc::createNpc(getString(L, 1));
 	if (!npc) {
 		lua_pushnil(L);
 		return 1;
+	}
+
+	if (lua_gettop(L) >= 5) {
+		npc->setDisplayName(getString(L, 5));
 	}
 
 	const Position& position = getPosition(L, 2);
@@ -8759,6 +8764,21 @@ int LuaScriptInterface::luaPlayerGetMaxSoul(lua_State* L)
 	} else {
 		lua_pushnil(L);
 	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerSetShopMoney(lua_State* L)
+{
+	// player:setShopMoney(money) -- saldo mostrado na janela de trade aberta (-1 = padrao)
+	Player* player = getUserdata<Player>(L, 1);
+	if (!player) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	player->setShopMoney(getNumber<int64_t>(L, 2, -1));
+	player->sendSaleItemList();
+	pushBoolean(L, true);
 	return 1;
 }
 

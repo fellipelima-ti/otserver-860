@@ -138,10 +138,15 @@ class Npc final : public Creature
 		void reload();
 
 		const std::string& getName() const override {
-			return name;
+			return displayName.empty() ? name : displayName;
 		}
 		const std::string& getNameDescription() const override {
-			return name;
+			return getName();
+		}
+
+		// Helblazer: nome proprio para NPCs criados por script (ex.: "Loja de Fulano")
+		void setDisplayName(const std::string& newName) {
+			displayName = newName;
 		}
 
 		CreatureType_t getType() const override {
@@ -220,6 +225,7 @@ class Npc final : public Creature
 		std::set<Player*> spectators;
 
 		std::string name;
+		std::string displayName;
 		std::string filename;
 
 		NpcEventsHandler* npcEventHandler;
