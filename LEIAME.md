@@ -105,7 +105,7 @@ Não precisa de premium para promover. Existem duas promoções:
 
 **Como promover:**
 - Comando `!promote` mostra a próxima promoção, o level e o preço. `!promote sim` confirma.
-- Ou fale `hi` e depois `promocao` com o NPC **The Forgotten King**.
+- Ou fale `hi` e depois `promocao` com o NPC **The Forgotten King**, no templo de Trekolt (na frente do monumento, ao norte de onde o personagem nasce).
 - O gold sai da mochila ou do banco.
 
 Level e preço ficam em `data/lib/core/helblazer.lua` (`HELBLAZER_PROMOCOES`).

@@ -396,8 +396,8 @@
 	<spawn centerx="435" centery="234" centerz="7" radius="1">
 		<npc name="Riona" x="0" y="0" z="7" spawntime="60" direction="3" />
 	</spawn>
-	<spawn centerx="122" centery="318" centerz="7" radius="1">
-		<npc name="The Forgotten King" x="0" y="0" z="7" spawntime="60" />
+	<spawn centerx="95" centery="112" centerz="7" radius="1">
+		<npc name="The Forgotten King" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="278" centery="336" centerz="7" radius="5">
 		<monster name="Orc" x="-1" y="-2" z="7" spawntime="60" />
