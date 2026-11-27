@@ -1,0 +1,11 @@
+# Compilacao
+build/
+/tfs
+
+# Configuracao local (tem a senha do banco) - gerada pelo install.sh
+/config.lua
+
+# Logs e arquivos temporarios
+*.log
+data/logs/*
+!data/logs/.gitignore
