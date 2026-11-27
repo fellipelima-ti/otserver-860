@@ -510,7 +510,7 @@ bool Spell::configureSpell(const pugi::xml_node& node)
 			attr = vocationNode.attribute("showInDescription");
 			vocSpellMap[vocationId] = !attr || attr.as_bool();
 
-			// Helblazer: promocoes herdam a magia (sem aparecer na descricao)
+			// FolgaOt: promocoes herdam a magia (sem aparecer na descricao)
 			uint16_t promotedVocation = g_vocations.getPromotedVocation(vocationId);
 			while (promotedVocation != VOCATION_NONE && vocSpellMap.find(promotedVocation) == vocSpellMap.end()) {
 				vocSpellMap[promotedVocation] = false;

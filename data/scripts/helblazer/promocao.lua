@@ -1,5 +1,5 @@
 --[[
-	Helblazer OT - comando !promote
+	FolgaOt - comando !promote
 	"!promote"     mostra qual e a proxima promocao, o level e o preco
 	"!promote sim" faz a promocao (cobra da mochila ou do banco)
 	Level e preco ficam em data/lib/core/helblazer.lua (HELBLAZER_PROMOCOES).

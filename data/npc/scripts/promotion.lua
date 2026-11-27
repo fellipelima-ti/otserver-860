@@ -1,4 +1,4 @@
--- Helblazer OT - The Forgotten King: 1a e 2a promocao (sem premium)
+-- FolgaOt - The Forgotten King: 1a e 2a promocao (sem premium)
 local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)

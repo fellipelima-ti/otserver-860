@@ -1,5 +1,5 @@
 --[[
-	Helblazer OT - Loja de jogador
+	FolgaOt - Loja de jogador
 
 	O jogador abre uma loja na cidade e um vendedor com a roupa dele ("Loja de Fulano")
 	fica parado vendendo, com o dono online ou offline. Quem compra fala "hi" e "trade"

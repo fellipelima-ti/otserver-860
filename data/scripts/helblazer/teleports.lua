@@ -1,5 +1,5 @@
 --[[
-	Helblazer OT - Sistema de Teleportes
+	FolgaOt - Sistema de Teleportes
 
 	1) PORTAIS FISICOS: criados automaticamente no mapa toda vez que o servidor liga.
 	   Para adicionar um portal, coloque uma linha em HELBLAZER_PORTAIS.
@@ -61,9 +61,9 @@ function portais.onStartup()
 	for _, cfg in ipairs(HELBLAZER_PORTAIS) do
 		local tile = Tile(cfg.de)
 		if not tile or not tile:getGround() then
-			print(string.format("[Helblazer] Portal '%s' ignorado: tile invalido em %d,%d,%d", cfg.nome, cfg.de.x, cfg.de.y, cfg.de.z))
+			print(string.format("[FolgaOt] Portal '%s' ignorado: tile invalido em %d,%d,%d", cfg.nome, cfg.de.x, cfg.de.y, cfg.de.z))
 		elseif not Tile(cfg.para) then
-			print(string.format("[Helblazer] Portal '%s' ignorado: destino invalido", cfg.nome))
+			print(string.format("[FolgaOt] Portal '%s' ignorado: destino invalido", cfg.nome))
 		else
 			local item = Game.createItem(TELEPORT_ITEM, 1, cfg.de)
 			local tp = item and Teleport(item.uid)
@@ -74,7 +74,7 @@ function portais.onStartup()
 			end
 		end
 	end
-	print(string.format(">> Helblazer: %d portais criados", criados))
+	print(string.format(">> FolgaOt: %d portais criados", criados))
 	return true
 end
 

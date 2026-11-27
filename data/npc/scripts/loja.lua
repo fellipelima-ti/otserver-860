@@ -1,4 +1,4 @@
--- Helblazer OT - vendedor da loja de jogador ("Loja de Fulano")
+-- FolgaOt - vendedor da loja de jogador ("Loja de Fulano")
 -- "trade" abre os itens vendidos em gold e "coins" os vendidos em coins.
 -- A logica comum fica em data/lib/core/helblazer_loja.lua.
 local keywordHandler = KeywordHandler:new()

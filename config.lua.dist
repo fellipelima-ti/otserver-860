@@ -26,11 +26,11 @@ loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 0
-motd = "Bem-vindo ao Helblazer OT!"
+motd = "Bem-vindo ao FolgaOt!"
 onePlayerOnlinePerAccount = true
 allowClones = false
 allowWalkthrough = true
-serverName = "Helblazer OT"
+serverName = "FolgaOt"
 statusTimeout = 5000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 25
@@ -58,7 +58,7 @@ timeBetweenExActions = 1000
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
 mapName = "forgotten"
-mapAuthor = "Helblazer"
+mapAuthor = "FolgaOt"
 
 -- Market
 marketOfferDuration = 30 * 24 * 60 * 60
@@ -124,7 +124,7 @@ serverSaveShutdown = true
 -- minlevel and multiplier are MANDATORY
 -- maxlevel is OPTIONAL, but is considered infinite by default
 -- to disable stages, create a stage with minlevel 1 and no maxlevel
--- Helblazer: experiencia fixa de 50x (rateExp). Para usar stages, troque nil por uma tabela.
+-- FolgaOt: experiencia fixa de 50x (rateExp). Para usar stages, troque nil por uma tabela.
 experienceStages = nil
 
 -- Rates

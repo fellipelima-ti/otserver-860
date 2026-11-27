@@ -144,7 +144,7 @@ class Npc final : public Creature
 			return getName();
 		}
 
-		// Helblazer: nome proprio para NPCs criados por script (ex.: "Loja de Fulano")
+		// FolgaOt: nome proprio para NPCs criados por script (ex.: "Loja de Fulano")
 		void setDisplayName(const std::string& newName) {
 			displayName = newName;
 		}

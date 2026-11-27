@@ -13,7 +13,7 @@ function onLogin(player)
 	end
 	player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 
-	-- Helblazer: promocao nao depende de premium, a vocacao fica como esta salva.
+	-- FolgaOt: promocao nao depende de premium, a vocacao fica como esta salva.
 
 	-- Events
 	player:registerEvent("PlayerDeath")

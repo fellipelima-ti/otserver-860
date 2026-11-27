@@ -1,4 +1,4 @@
--- Helblazer OT - promocoes de vocacao (usado pelo comando !promote e pelo NPC The Forgotten King)
+-- FolgaOt - promocoes de vocacao (usado pelo comando !promote e pelo NPC The Forgotten King)
 -- Nao precisa de premium.
 
 HELBLAZER_PROMOCOES = {

@@ -3834,7 +3834,7 @@ void Player::checkSkullTicks(int64_t ticks)
 
 bool Player::isPromoted() const
 {
-	// Helblazer: promovido = vocacao que veio de outra (vale para 1a e 2a promocao)
+	// FolgaOt: promovido = vocacao que veio de outra (vale para 1a e 2a promocao)
 	return vocation->getFromVocation() != vocation->getId();
 }
 

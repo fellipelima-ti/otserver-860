@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Helblazer OT - cria uma conta com um personagem.
+# FolgaOt - cria uma conta com um personagem.
 # Uso: sudo ./criar-conta.sh <conta> <senha> "<Nome do Char>" <vocacao> [--admin]
 #   vocacao: sorcerer | druid | paladin | knight
 #   --admin: cria a conta como God (acesso a comandos de GM)

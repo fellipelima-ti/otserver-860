@@ -1,6 +1,8 @@
-# Helblazer OT (8.60)
+# FolgaOt (8.60)
 
-Servidor de Tibia 8.60 baseado no **TFS 1.5, downgrade 8.60 do Nekiro**, com correções e o sistema de teleportes do Helblazer.
+> O servidor se chamava Helblazer OT. Os nomes internos (serviço `helblazer`, banco `helblazer`, pasta `/opt/helblazer` e os arquivos `helblazer*`) continuam iguais, para não quebrar instalações que já existem.
+
+Servidor de Tibia 8.60 baseado no **TFS 1.5, downgrade 8.60 do Nekiro**, com correções e o sistema de teleportes do FolgaOt.
 
 | Configuração | Valor |
 |---|---|
@@ -49,7 +51,7 @@ Vocações: `sorcerer`, `druid`, `paladin`, `knight`. O personagem começa no le
 Para a **sua conta de administrador (God)**, coloque `--admin` no final:
 
 ```bash
-sudo ./criar-conta.sh admin SenhaForte123 "GM Helblazer" sorcerer --admin
+sudo ./criar-conta.sh admin SenhaForte123 "GM Folga" sorcerer --admin
 ```
 
 Mais tarde dá para instalar um site (MyAAC ou Znote AAC) para os jogadores criarem contas sozinhos.
@@ -148,6 +150,40 @@ Qualquer jogador pode montar uma loja na cidade. Um vendedor com a roupa dele, c
 - O God dá coins com `/coins Nome, 100` (com número negativo, tira).
 
 Taxa, número máximo de itens por loja e preço máximo ficam em `data/lib/core/helblazer_loja.lua` (`HELBLAZER_LOJA`). As tabelas do banco (`player_shops`, `player_shop_items`, `player_shop_sales` e a coluna `coins` de `accounts`) são criadas sozinhas quando o servidor liga.
+
+## Tasks, recompensa diária, autoloot e criatura do dia
+
+Sistemas inspirados em outros servidores 8.60. Tudo fica configurável em `data/lib/core/helblazer_sistemas.lua`.
+
+**Tasks (`!task`).** Mostra as tasks do seu level, com o progresso.
+- `!task dragons` começa uma task. Só dá para ter uma por vez, e pode repetir quantas vezes quiser.
+- O progresso aparece a cada 10 kills e nas 5 últimas.
+- Ao terminar, você ganha experiência, gold (no banco) e coins.
+- `!task cancelar` desiste da task.
+- **Task diária:** `!task diaria` aceita uma task sorteada para você no dia (entre as mais altas do seu level). Ela vale 1,5x a recompensa normal, mais 5 coins, e muda à meia-noite.
+
+| Task | Kills | Level | Recompensa |
+|---|---|---|---|
+| Trolls | 100 | 8 | 15k exp, 2k gold |
+| Rotworms | 100 | 8 | 20k exp, 2k gold |
+| Orcs | 150 | 15 | 60k exp, 5k gold, 1 coin |
+| Amazons | 150 | 25 | 120k exp, 8k gold, 2 coins |
+| Ghouls | 150 | 30 | 180k exp, 10k gold, 2 coins |
+| Cyclops | 200 | 40 | 400k exp, 15k gold, 3 coins |
+| Spiders | 150 | 60 | 900k exp, 25k gold, 5 coins |
+| Dragons | 200 | 70 | 2kk exp, 40k gold, 8 coins |
+| Vampires | 200 | 80 | 2,5kk exp, 40k gold, 8 coins |
+| Demons | 100 | 130 | 8kk exp, 100k gold, 20 coins |
+
+**Recompensa diária (`!diario`).** Uma vez por dia, com aviso no login quando está disponível. Dias seguidos aumentam o prêmio: 5k gold, 10k gold, 25 poções, 20k gold, 50 poções, 30k gold e, no 7º dia, 50k gold + 10 coins. Depois recomeça. Se passar um dia sem pegar, volta para o dia 1. As poções são mana potion para magos e paladins e health potion para knights.
+
+**Autoloot (`!autoloot`).** Quando o monstro morre, os itens da sua lista saem do corpo e vão direto para a sua mochila.
+- `!autoloot add dragon ham` e `!autoloot remove dragon ham` (nome em inglês, como aparece no jogo). Até 20 itens.
+- `!autoloot gold` liga e desliga: as moedas do loot vão direto para o banco.
+- `!autoloot limpar` esvazia a lista.
+- Só vale para o dono do loot e se ele estiver a até 10 sqm do monstro. Se a mochila encher, o resto fica no corpo.
+
+**Criatura do dia (`!boosted`).** Todo dia um monstro sorteado dá **+50% de experiência** e tem o **loot sorteado duas vezes**. É anunciado no login e para todos quando o dia vira.
 
 ## Premium
 

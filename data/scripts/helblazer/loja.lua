@@ -1,5 +1,5 @@
 --[[
-	Helblazer OT - Loja de jogador (comandos)
+	FolgaOt - Loja de jogador (comandos)
 
 	!loja                    mostra a ajuda e a situacao da sua loja
 	!loja abrir              coloca o seu vendedor no piso a sua frente (na cidade, em protection zone)

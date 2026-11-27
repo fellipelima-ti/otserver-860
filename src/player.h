@@ -907,7 +907,7 @@ class Player final : public Creature, public Cylinder
 				client->sendShop(shopItemList);
 			}
 		}
-		// Helblazer: saldo mostrado na janela de trade (-1 = dinheiro na mochila)
+		// FolgaOt: saldo mostrado na janela de trade (-1 = dinheiro na mochila)
 		void setShopMoney(int64_t money) {
 			shopMoney = money;
 		}

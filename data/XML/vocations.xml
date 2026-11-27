@@ -90,7 +90,7 @@
 		<skill id="5" multiplier="1.1" />
 		<skill id="6" multiplier="1.1" />
 	</vocation>
-	<!-- Helblazer: 2a promocao (level 150 + 150k gold, via !promote ou NPC The Forgotten King) -->
+	<!-- FolgaOt: 2a promocao (level 150 + 150k gold, via !promote ou NPC The Forgotten King) -->
 	<vocation id="9" clientid="3" name="Arch Sorcerer" description="an arch sorcerer" gaincap="10" gainhp="5" gainmana="35" gainhpticks="4" gainhpamount="10" gainmanaticks="2" gainmanaamount="15" manamultiplier="1.05" attackspeed="2000" basespeed="220" soulmax="200" gainsoulticks="10" fromvoc="5" noPongKickTime="40">
 		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
 		<skill id="0" multiplier="1.5" />

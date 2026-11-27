@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Helblazer OT - instalador para Ubuntu 22.04 / 24.04
+# FolgaOt - instalador para Ubuntu 22.04 / 24.04
 # Uso (dentro da pasta do servidor):  sudo ./install.sh [IP_PUBLICO]
 set -euo pipefail
 
@@ -82,7 +82,7 @@ id "$USUARIO" > /dev/null 2>&1 || useradd --system --home-dir "$DIR" --shell /us
 chown -R "$USUARIO:$USUARIO" "$DIR"
 cat > /etc/systemd/system/$SERVICO.service <<EOF
 [Unit]
-Description=Helblazer OT (TFS 1.5 8.60)
+Description=FolgaOt (TFS 1.5 8.60)
 After=network.target mariadb.service
 Requires=mariadb.service
 
@@ -111,7 +111,7 @@ fi
 
 echo
 echo "=============================================="
-echo " Helblazer OT instalado e rodando!"
+echo " FolgaOt instalado e rodando!"
 echo " IP para o cliente: $IP  (porta 7171)"
 echo " Ver o console:  journalctl -u $SERVICO -f"
 echo " Reiniciar:      systemctl restart $SERVICO"
