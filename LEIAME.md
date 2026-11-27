@@ -70,11 +70,17 @@ O `install.sh` pode ser rodado de novo sem perigo: ele **não apaga** o banco ne
 
 ## Como os jogadores conectam
 
-Use o **OTClient** ou o cliente 8.60 com um IP changer:
+**Recomendado: OTClient Redemption** (gráfico melhor que o cliente original: luz e sombras, antialiasing, andar suave, FPS alto e interface moderna, com os mesmos sprites do 8.60).
 
-- IP: o IP da VPS
-- Porta: 7171
-- Versão: 8.60
+1. Baixe o OTClient Redemption para Windows em [github.com/mehah/otclient/releases](https://github.com/mehah/otclient/releases) e extraia numa pasta.
+2. Crie dentro dela a pasta `data/things/860/` e copie para lá o `Tibia.dat` e o `Tibia.spr` do cliente Tibia 8.60.
+3. Abra o OTClient e entre com:
+   - Server: IP do servidor (`127.0.0.1` se o servidor roda no mesmo PC)
+   - Port: `7171`
+   - Client version: `860`
+4. Para deixar mais bonito, abra **Options → Graphics**: deixe *Antialiasing* em **Smooth Retro** e confira se as luzes (*Enable lights*) estão ligadas.
+
+**Alternativa: cliente Tibia 8.60 original** com o **OTLand IP Changer**. Cadastre o `Tibia.exe` em *Settings → Add new Tibia client* (versão `8.60`), escolha a versão, coloque o IP e clique em *Apply*. Se aparecer *"Video surface allocation failed (Error Code 13)"*, marque *Force graphics engine → OpenGL* no Settings do IP Changer.
 
 ## Teleportes
 
