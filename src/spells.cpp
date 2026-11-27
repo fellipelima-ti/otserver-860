@@ -509,6 +509,13 @@ bool Spell::configureSpell(const pugi::xml_node& node)
 		if (vocationId != -1) {
 			attr = vocationNode.attribute("showInDescription");
 			vocSpellMap[vocationId] = !attr || attr.as_bool();
+
+			// Helblazer: promocoes herdam a magia (sem aparecer na descricao)
+			uint16_t promotedVocation = g_vocations.getPromotedVocation(vocationId);
+			while (promotedVocation != VOCATION_NONE && vocSpellMap.find(promotedVocation) == vocSpellMap.end()) {
+				vocSpellMap[promotedVocation] = false;
+				promotedVocation = g_vocations.getPromotedVocation(promotedVocation);
+			}
 		} else {
 			std::cout << "[Warning - Spell::configureSpell] Wrong vocation name: " << attr.as_string() << std::endl;
 		}

@@ -13,17 +13,7 @@ function onLogin(player)
 	end
 	player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 
-	-- Promotion
-	local vocation = player:getVocation()
-	local promotion = vocation:getPromotion()
-	if player:isPremium() then
-		local value = player:getStorageValue(PlayerStorageKeys.promotion)
-		if value == 1 then
-			player:setVocation(promotion)
-		end
-	elseif not promotion then
-		player:setVocation(vocation:getDemotion())
-	end
+	-- Helblazer: promocao nao depende de premium, a vocacao fica como esta salva.
 
 	-- Events
 	player:registerEvent("PlayerDeath")

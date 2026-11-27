@@ -642,6 +642,14 @@ bool MoveEvent::configureEvent(const pugi::xml_node& node)
 			int32_t vocationId = g_vocations.getVocationId(vocationNameAttribute.as_string());
 			if (vocationId != -1) {
 				vocEquipMap[vocationId] = true;
+
+				// Helblazer: promocoes herdam o equipamento
+				uint16_t promotedVocation = g_vocations.getPromotedVocation(vocationId);
+				while (promotedVocation != VOCATION_NONE && vocEquipMap.find(promotedVocation) == vocEquipMap.end()) {
+					vocEquipMap[promotedVocation] = true;
+					promotedVocation = g_vocations.getPromotedVocation(promotedVocation);
+				}
+
 				if (vocationNode.attribute("showInDescription").as_bool(true)) {
 					vocStringList.push_back(asLowerCaseString(vocationNameAttribute.as_string()));
 				}

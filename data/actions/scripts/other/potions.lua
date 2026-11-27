@@ -22,49 +22,49 @@ local potions = {
 	},
 	[7439] = { -- berserk potion
 		condition = berserk,
-		vocations = {4, 8},
+		vocations = {4, 8, 12},
 		effect = CONST_ME_MAGIC_RED,
 		description = "Only knights may drink this potion.",
 		text = "You feel stronger."
 	},
 	[7440] = { -- mastermind potion
 		condition = mastermind,
-		vocations = {1, 2, 5, 6},
+		vocations = {1, 2, 5, 6, 9, 10},
 		effect = CONST_ME_MAGIC_BLUE,
 		description = "Only sorcerers and druids may drink this potion.",
 		text = "You feel smarter."
 		},
 	[7443] = { -- bullseye potion
 		condition = bullseye,
-		vocations = {3, 7},
+		vocations = {3, 7, 11},
 		effect = CONST_ME_MAGIC_GREEN,
 		description = "Only paladins may drink this potion.",
 		text = "You feel more accurate."
 	},
 	[7588] = { -- strong health potion
 		health = {250, 350},
-		vocations = {3, 4, 7, 8},
+		vocations = {3, 4, 7, 8, 11, 12},
 		level = 50,
 		flask = 7634,
 		description = "Only knights and paladins of level 50 or above may drink this fluid."
 	},
 	[7589] = { -- strong mana potion
 		mana = {115, 185},
-		vocations = {1, 2, 3, 5, 6, 7},
+		vocations = {1, 2, 3, 5, 6, 7, 9, 10, 11},
 		level = 50,
 		flask = 7634,
 		description = "Only sorcerers, druids and paladins of level 50 or above may drink this fluid."
 	},
 	[7590] = { -- great mana potion
 		mana = {150, 250},
-		vocations = {1, 2, 5, 6},
+		vocations = {1, 2, 5, 6, 9, 10},
 		level = 80,
 		flask = 7635,
 		description = "Only druids and sorcerers of level 80 or above may drink this fluid."
 	},
 	[7591] = { -- great health potion
 		health = {425, 575},
-		vocations = {4, 8},
+		vocations = {4, 8, 12},
 		level = 80,
 		flask = 7635,
 		description = "Only knights of level 80 or above may drink this fluid."
@@ -80,14 +80,14 @@ local potions = {
 	[8472] = { -- great spirit potion
 		health = {250, 350},
 		mana = {100, 200},
-		vocations = {3, 7},
+		vocations = {3, 7, 11},
 		level = 80,
 		flask = 7635,
 		description = "Only paladins of level 80 or above may drink this fluid."
 	},
 	[8473] = { -- ultimate health potion
 		health = {650, 850},
-		vocations = {4, 8},
+		vocations = {4, 8, 12},
 		level = 130,
 		flask = 7635,
 		description = "Only knights of level 130 or above may drink this fluid."

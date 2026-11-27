@@ -214,9 +214,11 @@ bool Weapon::configureEvent(const pugi::xml_node& node)
 		int32_t vocationId = g_vocations.getVocationId(attr.as_string());
 		if (vocationId != -1) {
 			vocWeaponMap[vocationId] = true;
-			int32_t promotedVocation = g_vocations.getPromotedVocation(vocationId);
-			if (promotedVocation != VOCATION_NONE) {
+			// Helblazer: libera para todas as promocoes (1a e 2a)
+			uint16_t promotedVocation = g_vocations.getPromotedVocation(vocationId);
+			while (promotedVocation != VOCATION_NONE && vocWeaponMap.find(promotedVocation) == vocWeaponMap.end()) {
 				vocWeaponMap[promotedVocation] = true;
+				promotedVocation = g_vocations.getPromotedVocation(promotedVocation);
 			}
 
 			if (vocationNode.attribute("showInDescription").as_bool(true)) {

@@ -92,6 +92,38 @@ Tudo fica em `data/scripts/helblazer/teleports.lua`.
 
 Para adicionar um portal ou destino, basta incluir uma linha na tabela do arquivo. Para descobrir as coordenadas, fique no lugar dentro do jogo e digite `!pos`. Depois reinicie o servidor.
 
+## Vocações e promoções
+
+Não precisa de premium para promover. Existem duas promoções:
+
+| Vocação | 1ª promoção (level 20, 20k) | 2ª promoção (level 150, 150k) |
+|---|---|---|
+| Sorcerer | Master Sorcerer | **Arch Sorcerer** |
+| Druid | Elder Druid | **Ancient Druid** |
+| Paladin | Royal Paladin | **Divine Paladin** |
+| Knight | Elite Knight | **Supreme Knight** |
+
+**Como promover:**
+- Comando `!promote` mostra a próxima promoção, o level e o preço. `!promote sim` confirma.
+- Ou fale `hi` e depois `promocao` com o NPC **The Forgotten King**.
+- O gold sai da mochila ou do banco.
+
+Level e preço ficam em `data/lib/core/helblazer.lua` (`HELBLAZER_PROMOCOES`).
+
+**Bônus da 2ª promoção** (em relação à 1ª):
+
+| Vocação | HP/level | Mana/level | Regeneração | Outros |
+|---|---|---|---|---|
+| Arch Sorcerer / Ancient Druid | 5 | 35 (antes 30) | mana +50% | magic level sobe ~5% mais rápido |
+| Divine Paladin | 12 (antes 10) | 17 (antes 15) | HP e mana +20% | distance sobe mais rápido, +5% de dano à distância |
+| Supreme Knight | 18 (antes 15) | 5 | HP +50% | skills de melee e shielding sobem mais rápido, +5% de dano melee |
+
+A 2ª promoção herda **todas** as magias, armas, wands/rods, poções e equipamentos da vocação. Os valores ficam em `data/XML/vocations.xml` (ids 9 a 12).
+
+## Premium
+
+`freePremium = true` no `config.lua`: todo mundo tem premium (magias premium, promoção etc.). Se um dia você quiser vender premium, mude para `false`.
+
 ## O que foi corrigido em relação ao original
 
 - **Não compilava no Ubuntu 24.04** (erro com o GCC 13 em `src/lockfree.h`): corrigido.
@@ -100,6 +132,9 @@ Para adicionar um portal ou destino, basta incluir uma linha na tabela do arquiv
 - **Loots que não existem no 8.60** (medicine pouch, bag of apple slices, coal) quebravam o loot de Swamp Troll, Witch e Carrion Worm: removidos.
 - O servidor agora liga **sem nenhum erro ou aviso** no console.
 - Mensagens de login em português.
+- **Promoção sumia sem premium:** o login rebaixava a vocação de quem não era premium. Removido.
+- **Armas/magias/equipamentos só passavam uma promoção adiante:** corrigido no código (C++) para valer em toda a cadeia de promoções.
+- **Magias premium inacessíveis** (não há como comprar premium): `freePremium` ativado.
 
 ## Mapa
 

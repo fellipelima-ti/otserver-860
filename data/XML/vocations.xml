@@ -90,4 +90,45 @@
 		<skill id="5" multiplier="1.1" />
 		<skill id="6" multiplier="1.1" />
 	</vocation>
+	<!-- Helblazer: 2a promocao (level 150 + 150k gold, via !promote ou NPC The Forgotten King) -->
+	<vocation id="9" clientid="3" name="Arch Sorcerer" description="an arch sorcerer" gaincap="10" gainhp="5" gainmana="35" gainhpticks="4" gainhpamount="10" gainmanaticks="2" gainmanaamount="15" manamultiplier="1.05" attackspeed="2000" basespeed="220" soulmax="200" gainsoulticks="10" fromvoc="5" noPongKickTime="40">
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
+		<skill id="0" multiplier="1.5" />
+		<skill id="1" multiplier="2.0" />
+		<skill id="2" multiplier="2.0" />
+		<skill id="3" multiplier="2.0" />
+		<skill id="4" multiplier="2.0" />
+		<skill id="5" multiplier="1.5" />
+		<skill id="6" multiplier="1.1" />
+	</vocation>
+	<vocation id="10" clientid="4" name="Ancient Druid" description="an ancient druid" gaincap="10" gainhp="5" gainmana="35" gainhpticks="4" gainhpamount="10" gainmanaticks="2" gainmanaamount="15" manamultiplier="1.05" attackspeed="2000" basespeed="220" soulmax="200" gainsoulticks="10" fromvoc="6" noPongKickTime="40">
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
+		<skill id="0" multiplier="1.5" />
+		<skill id="1" multiplier="1.8" />
+		<skill id="2" multiplier="1.8" />
+		<skill id="3" multiplier="1.8" />
+		<skill id="4" multiplier="1.8" />
+		<skill id="5" multiplier="1.5" />
+		<skill id="6" multiplier="1.1" />
+	</vocation>
+	<vocation id="11" clientid="2" name="Divine Paladin" description="a divine paladin" gaincap="20" gainhp="12" gainmana="17" gainhpticks="3" gainhpamount="12" gainmanaticks="3" gainmanaamount="12" manamultiplier="1.35" attackspeed="2000" basespeed="220" soulmax="200" gainsoulticks="10" fromvoc="7" noPongKickTime="50">
+		<formula meleeDamage="1.0" distDamage="1.05" defense="1.0" armor="1.0" />
+		<skill id="0" multiplier="1.2" />
+		<skill id="1" multiplier="1.2" />
+		<skill id="2" multiplier="1.2" />
+		<skill id="3" multiplier="1.2" />
+		<skill id="4" multiplier="1.05" />
+		<skill id="5" multiplier="1.1" />
+		<skill id="6" multiplier="1.1" />
+	</vocation>
+	<vocation id="12" clientid="1" name="Supreme Knight" description="a supreme knight" gaincap="25" gainhp="18" gainmana="5" gainhpticks="2" gainhpamount="15" gainmanaticks="4" gainmanaamount="10" manamultiplier="3.0" attackspeed="2000" basespeed="220" soulmax="200" gainsoulticks="10" fromvoc="8">
+		<formula meleeDamage="1.05" distDamage="1.0" defense="1.0" armor="1.0" />
+		<skill id="0" multiplier="1.05" />
+		<skill id="1" multiplier="1.05" />
+		<skill id="2" multiplier="1.05" />
+		<skill id="3" multiplier="1.05" />
+		<skill id="4" multiplier="1.4" />
+		<skill id="5" multiplier="1.05" />
+		<skill id="6" multiplier="1.1" />
+	</vocation>
 </vocations>
