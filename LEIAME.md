@@ -78,7 +78,8 @@ O `install.sh` pode ser rodado de novo sem perigo: ele **não apaga** o banco ne
    - Server: IP do servidor (`127.0.0.1` se o servidor roda no mesmo PC)
    - Port: `7171`
    - Client version: `860`
-4. Para deixar mais bonito, abra **Options → Graphics**: deixe *Antialiasing* em **Smooth Retro** e confira se as luzes (*Enable lights*) estão ligadas.
+4. Copie o conteúdo da pasta `cliente/` deste repositório para dentro da pasta do OTClient (substituindo): é o fundo da tela de login do FolgaOt.
+5. Para deixar mais bonito, abra **Options → Graphics**: deixe *Antialiasing* em **Smooth Retro** e confira se as luzes (*Enable lights*) estão ligadas.
 
 **Alternativa: cliente Tibia 8.60 original** com o **OTLand IP Changer**. Cadastre o `Tibia.exe` em *Settings → Add new Tibia client* (versão `8.60`), escolha a versão, coloque o IP e clique em *Apply*. Se aparecer *"Video surface allocation failed (Error Code 13)"*, marque *Force graphics engine → OpenGL* no Settings do IP Changer.
 
