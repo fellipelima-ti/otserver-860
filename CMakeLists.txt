@@ -52,12 +52,16 @@ else ()
     find_package(Lua REQUIRED)
 endif ()
 
-find_package(Boost 1.66.0 REQUIRED COMPONENTS date_time system filesystem iostreams)
+# Boost.System e so cabecalho desde o 1.69 e a biblioteca foi removida no 1.89: nao pedir "system".
+if (POLICY CMP0167)
+    cmake_policy(SET CMP0167 NEW)
+endif ()
+find_package(Boost 1.66.0 REQUIRED COMPONENTS date_time filesystem iostreams)
 
 include_directories(${Boost_INCLUDE_DIRS} ${Crypto++_INCLUDE_DIR} ${LUA_INCLUDE_DIR} ${MYSQL_INCLUDE_DIR} ${PUGIXML_INCLUDE_DIR})
 target_link_libraries(tfs PRIVATE
+        Boost::boost
         Boost::date_time
-        Boost::system
         Boost::filesystem
         Boost::iostreams
         fmt::fmt
